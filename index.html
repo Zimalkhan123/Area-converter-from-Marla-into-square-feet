@@ -5,50 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>marla to square-feet converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
     
-    <style>
-         body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: url(f8789a50d64f4c2b8d2a.jpg);
-            padding-top: 150px;
-         }
-         .container{
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid pink;
-            border-radius: 5px;
-            background-color: lightblue;
-          
 
-         }
-         label{
-            display: block;
-            margin-bottom: 5px;
-            
-         }
-         input[type="text"]{
-            width: 100px;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-         }
-         button{
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-
-         }
-         p{ 
-            margin-top: 10px;
-            font-weight: bold;
-         }
-    </style>
 
 </head>
 <body><div class="container">
@@ -58,27 +18,26 @@
     <button id="convertButton">Convert</button>
     <p id="result"></p>
 </div>
-
 <script>
-    function convertMarlaToSquareFeet() {
-        let inputMarla = document.getElementById("marla").value;
-        inputMarla = inputMarla.replace(',', '.');
-        const marla = parseFloat(inputMarla);
-        if (!isNaN(marla)) {
-            const squareFeet = marla * 272.25;
-            document.getElementById("result").innerHTML = `${marla} Marla is equal to ${squareFeet} Square Feet`;
-        } else {
-            document.getElementById("result").innerHTML = "Please enter a valid number";
-        }
+function convertMarlaToSquareFeet() {
+    let inputMarla = document.getElementById("marla").value;
+    inputMarla = inputMarla.replace(',', '.');
+    const marla = parseFloat(inputMarla);
+    if (!isNaN(marla)) {
+        const squareFeet = marla * 272.25;
+        document.getElementById("result").innerHTML = `${marla} Marla is equal to ${squareFeet} Square Feet`;
+    } else {
+        document.getElementById("result").innerHTML = "Please enter a valid number";
     }
+}
 
-    document.getElementById("convertButton").addEventListener("click", convertMarlaToSquareFeet);
+document.getElementById("convertButton").addEventListener("click", convertMarlaToSquareFeet);
 
-    document.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-            convertMarlaToSquareFeet();
-        }
-    });
+document.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        convertMarlaToSquareFeet();
+    }
+});
 </script>
 </body>
 </html>
